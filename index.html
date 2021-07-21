@@ -40,13 +40,20 @@ function startDrag(e, obj){
 function stopDrag(){
      document.onmousemove = null;
      document.onmouseup = null;
+ 
+function change(){
+     var context=document.getElementById("inc").value;
+     document.getElementById("context").innerText=(context);
 }
 </script>
 </body>
 <div style='position:absolute; left:0px; top:0px; cursor:pointer; cursor:hand' onmousedown='startDrag(event, this)'>
     <table bgcolor="#0000FF"><tr><td>
-        <font color="#FFFFFF">하하하</font>
+        <font color="#FFFFFF" id="context">하하하</font>
     </td></tr></table>
 </div>
+<input type="text" id="inc">
+<input type="button" onclick="change();">
 <img src="KakaoTalk_20210721_200454388.png" width="150" style="position:absolute; left:0px; top:50px; cursor:pointer; cursor:hand" onmousedown="startDrag(event, this)" border="0">
+<img src="leejiyoung.png" width="210" style="position:absolute; left:100px; top:50px; cursor:pointer; cursor:hand" onmousedown="startDrag(event, this)" border="0">
 </html>
