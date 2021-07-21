@@ -42,19 +42,30 @@ function stopDrag(){
      document.onmouseup = null;
 }
  
-function change(){
+function change(id){
      var context=document.getElementById("inc").value;
-     document.getElementById("context").innerText=context;
+     document.getElementById(id).innerText=context;
 }
 </script>
 </body>
-<div style='position:absolute; left:0px; top:0px; cursor:pointer; cursor:hand' onmousedown='startDrag(event, this)'>
-    <table bgcolor="#0000FF"><tr><td>
-        <font color="#FFFFFF" id="context">하하하</font>
+<div style='position:absolute; left:0px; top:500px; cursor:pointer; cursor:hand' onmousedown='startDrag(event, this)'>
+    <table bgcolor="#A9D0F5"><tr><td>
+        <font color="#FFFFFF" id="hyuncon">우리 화해하자...</font>
     </td></tr></table>
 </div>
-<input type="text" id="inc">
-<input type="button" onclick="change();">
+<div style='position:absolute; left:0px; top:600px; cursor:pointer; cursor:hand' onmousedown='startDrag(event, this)'>
+  <table bgcolor="#A9D0F5"><tr><td>
+      <font color="#FFFFFF" id="leecon">그럴까?</font>
+  </td></tr></table>
+</div>
+<div>
+  <input type="text" id="inch" placeholder="현우진이 이지영에게 하고싶었던 말은?">
+  <input type="button" onclick="change(hyuncon);" value="바꾸기!">
+</div>
+<div>
+  <input type="text" id="incl" placeholder="이지영이 현우진에게 하고싶었던 말은?">
+  <input type="button" onclick="change(leecon);" value="바꾸기!">
+</div>
 <img src="KakaoTalk_20210721_200454388.png" width="150" style="position:absolute; left:0px; top:50px; cursor:pointer; cursor:hand" onmousedown="startDrag(event, this)" border="0">
 <img src="leejiyoung.png" width="210" style="position:absolute; left:200px; top:50px; cursor:pointer; cursor:hand" onmousedown="startDrag(event, this)" border="0">
 </html>
