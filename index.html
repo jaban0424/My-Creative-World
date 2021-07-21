@@ -4,9 +4,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>선생님! 뭐하세요?</title>
-   <!--<script type="text/javascript" src="js/https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-   <script type="text/javascript" src="js/jquery.jrumble.1.3.js"></script>-->
-   <!--<link rel="stylesheet" href="styleshit.css">-->
+   <link rel="stylesheet" href="styleshit.css">"
 </head>
 <body>
 <script type='text/javascript'>
@@ -14,12 +12,6 @@ var img_L = 0;
 var img_T = 0;
 var targetObj;
 
-/*$('#text1').jrumble({
-	x: 2,
-	y: 2,
-	rotation: 2
-});*/
-   
 function getLeft(o){
      return parseInt(o.style.left.replace('px', ''));
 }
@@ -35,7 +27,6 @@ function moveDrag(e){
      targetObj.style.left = dmvx +"px";
      targetObj.style.top = dmvy +"px";
      return false;
-     
 }
 
 // 드래그 시작
@@ -46,25 +37,21 @@ function startDrag(e, obj){
      img_T = getTop(obj) - e_obj.clientY;
 
      document.onmousemove = moveDrag;
-     document.onmouseup = stopDrag();
+     document.onmouseup = stopDrag;
      if(e_obj.preventDefault)e_obj.preventDefault();
-     //$(cl).trigger('startRumble');///추가시킴
 }
 
 // 드래그 멈추기
 function stopDrag(){
      document.onmousemove = null;
      document.onmouseup = null;
-     //$(cl).trigger('stopRumble');//추가시킴
 }
  
 function change(id){
      var context=document.getElementById(id+"in").value;
      document.getElementById(id+"con").innerText=context;
 }
- 
 </script>
-   
 </body>
 <div style='position:absolute; left:0px; top:300px; cursor:pointer; cursor:hand' onmousedown='startDrag(event, this)'>
     <table bgcolor="#A9D0F5"><tr><td>
@@ -87,6 +74,6 @@ function change(id){
 <img src="woojinmath.png" width="150" style="position:absolute; left:50px; top:80px; cursor:pointer; cursor:hand" onmousedown="startDrag(event, this)" border="0" class="im">
 <img src="jiyoungsociety.png" width="210" style="position:absolute; left:250px; top:80px; cursor:pointer; cursor:hand" onmousedown="startDrag(event, this)" border="0" class="im">
 <div>
-   0.0.9
+   0.0.4v
 </div>
 </html>
