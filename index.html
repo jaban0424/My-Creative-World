@@ -4,8 +4,9 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>선생님! 뭐하세요?</title>
-   <script type="text/javascript" src="js/https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-   <script type="text/javascript" src="js/jquery.jrumble.1.3.js"></script>
+   <!--<script type="text/javascript" src="js/https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+   <script type="text/javascript" src="js/jquery.jrumble.1.3.js"></script>-->
+   <link rel="stylesheet" href="styleshit.css">
 </head>
 <body>
 <script type='text/javascript'>
@@ -13,11 +14,11 @@ var img_L = 0;
 var img_T = 0;
 var targetObj;
 
-$('#text1').jrumble({///추가시킴
+/*$('#text1').jrumble({
 	x: 2,
 	y: 2,
 	rotation: 2
-});
+});*/
    
 function getLeft(o){
      return parseInt(o.style.left.replace('px', ''));
@@ -38,7 +39,7 @@ function moveDrag(e){
 }
 
 // 드래그 시작
-function startDrag(e, obj, cl){
+function startDrag(e, obj){
      targetObj = obj;
      var e_obj = window.event? window.event : e;
      img_L = getLeft(obj) - e_obj.clientX;
@@ -47,14 +48,14 @@ function startDrag(e, obj, cl){
      document.onmousemove = moveDrag;
      document.onmouseup = stopDrag(cl);
      if(e_obj.preventDefault)e_obj.preventDefault();
-     $(cl).trigger('startRumble');///추가시킴
+     //$(cl).trigger('startRumble');///추가시킴
 }
 
 // 드래그 멈추기
-function stopDrag(cl){
+function stopDrag(){
      document.onmousemove = null;
      document.onmouseup = null;
-     $(cl).trigger('stopRumble');//추가시킴
+     //$(cl).trigger('stopRumble');//추가시킴
 }
  
 function change(id){
@@ -66,12 +67,12 @@ function change(id){
 </script>
    
 </body>
-<div style='position:absolute; left:0px; top:300px; cursor:pointer; cursor:hand' onmousedown='startDrag(event, this,"#hyunim")'>
+<div style='position:absolute; left:0px; top:300px; cursor:pointer; cursor:hand' onmousedown='startDrag(event, this)'>
     <table bgcolor="#A9D0F5"><tr><td>
         <font color="#FFFFFF" id="hyuncon">우리 화해하자...</font>
     </td></tr></table>
 </div>
-<div style='position:absolute; left:0px; top:330px; cursor:pointer; cursor:hand' onmousedown='startDrag(event, this,"#leeim")'>
+<div style='position:absolute; left:0px; top:330px; cursor:pointer; cursor:hand' onmousedown='startDrag(event, this)'>
   <table bgcolor="#F5BCA9"><tr><td>
       <font color="#FFFFFF" id="leecon">그럴까?</font>
   </td></tr></table>
@@ -84,9 +85,9 @@ function change(id){
   <input type="text" id="leein" placeholder="이지영이 현우진에게 하고싶었던 말은?">
   <input type="button" onclick="change('lee');" value="바꾸기!">
 </div>
-<img src="woojinmath.png" width="150" style="position:absolute; left:50px; top:80px; cursor:pointer; cursor:hand" onmousedown="startDrag(event, this,'#hyunim')" border="0" class="hyunim">
-<img src="jiyoungsociety.png" width="210" style="position:absolute; left:250px; top:80px; cursor:pointer; cursor:hand" onmousedown="startDrag(event, this,'#leeim')" border="0" class="leeim">
+<img src="woojinmath.png" width="150" style="position:absolute; left:50px; top:80px; cursor:pointer; cursor:hand" onmousedown="startDrag(event, this)" border="0" class="im">
+<img src="jiyoungsociety.png" width="210" style="position:absolute; left:250px; top:80px; cursor:pointer; cursor:hand" onmousedown="startDrag(event, this)" border="0" class="im">
 <div>
-   0.0.5
+   0.0.6
 </div>
 </html>
