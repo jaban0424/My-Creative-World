@@ -63,6 +63,16 @@ function change(id){
       <font color="#FFFFFF" id="leecon">그럴까?</font>
   </td></tr></table>
 </div>
+<div style='position:absolute; left:0px; top:360px; cursor:pointer; cursor:hand' onmousedown='startDrag(event, this)'>
+   <table bgcolor="#2EFE9A"><tr><td>
+      <font color="#FFFFFF" id="baekcon">스승님!</font>
+   </td></tr></table>
+</div>
+<div style='position:absolute; left:0px; top:390px; cursor:pointer; cursor:hand' onmousedown='startDrag(event, this)'>
+   <table bgcolor="#F7D358"><tr><td>
+      <font color="#FFFFFF" id="yooncon">무지성으로 찍는 강사 누구야</font>
+   </td></tr></table>
+</div>
 <div>
   <input type="text" id="hyunin" placeholder="현우진이 이지영에게 하고싶었던 말은?">
   <input type="button" onclick="change('hyun');" value="바꾸기!">
@@ -71,8 +81,18 @@ function change(id){
   <input type="text" id="leein" placeholder="이지영이 현우진에게 하고싶었던 말은?">
   <input type="button" onclick="change('lee');" value="바꾸기!">
 </div>
+<div>
+  <input type="text" id="baekin" placeholder="백호가 윤도영에게 하고싶었던 말은?">
+  <input type="button" onclick="change('baek');" value="바꾸기!">
+</div>
+<div>
+  <input type="text" id="baekin" placeholder="윤도영이 백호에게 하고싶었던 말은?">
+  <input type="button" onclick="change('yoon');" value="바꾸기!">
+</div>
 <img src="woojinmath.png" width="150" style="position:absolute; left:50px; top:80px; cursor:pointer; cursor:hand" onmousedown="startDrag(event, this)" border="0" class="im">
 <img src="jiyoungsociety.png" width="210" style="position:absolute; left:250px; top:80px; cursor:pointer; cursor:hand" onmousedown="startDrag(event, this)" border="0" class="im">
+<img src="baekholife.png" width="210" style="position:absolute; left:250px; top:350px; cursor:pointer; cursor:hand" onmousedown="startDrag(event, this)" border="0" class="im">
+<img src="doyounglife.png" width="210" style="position:absolute; left:250px; top:550px; cursor:pointer; cursor:hand" onmousedown="startDrag(event, this)" border="0" class="im">
 <div>
    0.1.2v
 </div>
